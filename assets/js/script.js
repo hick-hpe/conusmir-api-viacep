@@ -6,6 +6,9 @@ cidades.forEach((cidade) => {
     const option = document.createElement('option');
     option.text = cidade;
     option.value = cidade;
+    // if (cidade == "Cascavel") {
+    //     option.selected = true;
+    // }
     select_cidades.add(option);
 });
 
@@ -127,9 +130,11 @@ async function pesquisarPorRua(cidade, rua) {
 
     // Exibir o gif enquanto espera os dados
     resultados_ruas.innerHTML = `
-        <div class="text-white d-flex justify-content-center align-items-center p-2 h-100" id="loading_gif">
-            <img src="assets/img/loading-gif.gif" alt="Loading..." class="mx-auto d-block" width="50" style="positon: absolute; z-index: 99;">
-        </div>
+        <tr>
+            <td colspan="3">
+                <img src="assets/img/loading-gif.gif" alt="Loading..." class="mx-auto d-block" width="50">
+            </td>
+        </tr>
     `;
 
     // Fazer requisição
@@ -166,11 +171,10 @@ function preencherCamposNoFormRua(resultados) {
     // Se não houver resultados
     if (resultados.length === 0) {
         resultados_ruas.innerHTML = `
-            <div class="text-white d-flex justify-content-center align-items-center p-2 h-100">
-                <h5>Nenhum resultado encontrado.</h5>
-            </div>
+            <tr>
+                <td colspan="3">Nenhum resultado encontrado.</td>
+            </tr>
         `;
-        console.log("object")
         return;
     }
 
@@ -178,10 +182,14 @@ function preencherCamposNoFormRua(resultados) {
         if (!item.logradouro) item.logradouro = "Logradouro não encontrado";
         if (!item.bairro) item.bairro = "Bairro não encontrado";
 
+        // Rua Pitágoras, Interlagos - 85814-385
+
         resultados_ruas.innerHTML += `
-            <div class="text-white d-flex align-items-center p-2">
-                ${item.logradouro}, ${item.bairro} - ${item.cep}
-            </div>
+            <tr>
+                <th>${item.logradouro}</th>
+                <th>${item.bairro}</th>
+                <th>${item.cep}</th>
+            </tr>
         `;
     });
 }
