@@ -33,3 +33,6 @@ Consulta por CEP:
 Consulta por Cidade e Rua:
 ![Consulta por Cidade e Rua](assets/img/consulta-rua.png)
 
+
+## Acesso
+Disponível em: https://hick-hpe.github.io/api-viacep/
