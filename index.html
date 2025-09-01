@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
     <div class="bg-light rounded-2 p-4 div-form" id="form_pesquisa_cep">
         <form id="form-dados" class="px-4 py-3">
             <div class="text-center mb-4">
@@ -58,16 +57,14 @@
                 <label for="ibge" class="form-label">Código IBGE</label>
                 <input type="text" name="ibge" id="ibge" class="form-control" placeholder="Ex.: 3550308" pattern="\d*">
             </div>
-
-            <!-- Botão de pesquisa -->
         </form>
 
-        <div class="text-center mx-4">
-            <button class="btn w-100 btn-troca-form" onclick="exibirFormularioRua()" id="btn_para_rua">Pesquisar por
-                Cidade e Rua</button>
+        <div class="text-center px-3">
+            <button class="btn w-100 btn-troca-form" onclick="exibirFormularioRua()" id="btn_para_rua">
+                Pesquisar por Cidade e Rua
+            </button>
         </div>
     </div>
-
 
     <div class="bg-light p-4 rounded div-form hidden" id="form_pesquisa_rua">
         <h1 class="text-center mb-4">Pesquisar por Cidade e Rua</h1>
